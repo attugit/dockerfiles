@@ -1,0 +1,12 @@
+version: '3'
+services:
+  chrome:
+    build: .
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /dev/shm:/dev/shm
+    environment:
+      DISPLAY: $DISPLAY
+    container_name: chrome
+    cap_add:
+      - SYS_ADMIN

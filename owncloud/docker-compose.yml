@@ -1,0 +1,20 @@
+version: '3.1'
+services:
+  owncloud:
+    image: owncloud
+    container_name: owncloud
+    restart: always
+    ports:
+      - 8080:80
+    volumes:
+      - data:/var/www/html
+
+  ocdb:
+    image: mariadb
+    container_name: ocdb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+
+volumes:
+    data:

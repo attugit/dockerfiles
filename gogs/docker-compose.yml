@@ -1,0 +1,22 @@
+version: '3'
+services:
+  gogs:
+    image: gogs/gogs
+    ports:
+      - "10022:22"
+      - "3000:3000"
+    container_name: gogs
+    restart: unless-stopped
+    volumes:
+      - data:/var/gogs
+
+  gogsdb:
+    image: mariadb
+    container_name: gogsdb
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: gogs
+
+volumes:
+  data:

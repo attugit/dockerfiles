@@ -1,0 +1,10 @@
+version: '3'
+services:
+  cimonitor:
+    image: marcells/node-build-monitor
+    ports:
+      - 10088:3000
+    volumes:
+      - ./config.json:/build-mon/app/config.json:ro
+    container_name: cimonitor
+    restart: unless-stopped

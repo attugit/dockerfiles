@@ -1,0 +1,17 @@
+{
+  "monitor": {
+    "debug": true,
+    "interval": 10000,
+    "latestBuildOnly": false,
+    "numberOfBuilds": 12,
+    "sortOrder": "date"
+  },
+  "services": [
+    {
+      "configuration": {
+        "slug": "attugit/cxxjson"
+      },
+      "name": "Travis"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+version: '3'
+services:
+  spotify:
+    build: .
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - spotify:/home/spotify/.spotify
+    devices:
+      - /dev/snd:/dev/snd
+    environment:
+      DISPLAY: unix$DISPLAY
+    container_name: spotify
+
+volumes:
+  spotify:
